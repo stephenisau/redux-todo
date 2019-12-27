@@ -1,0 +1,13 @@
+{
+    "todos": {
+        "1": {
+            "title": "First todo",
+            "description": "This is the description for the first todo"
+        }, 
+        "2": {
+            "title": "Second todo",
+            "description": "Second description"
+        }
+    },
+    "allIds": ["1", "2"]
+}
