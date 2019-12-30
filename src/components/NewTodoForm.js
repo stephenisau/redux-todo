@@ -41,6 +41,7 @@ class NewTodoForm extends Component {
             id="title"
             placeholder="Add a todo..."
             name="title"
+            value={this.state.title}
             onChange={(e) => this.handleChange(e)} />
           <input
             type="text"
@@ -48,6 +49,7 @@ class NewTodoForm extends Component {
             id="description"
             placeholder="Add a todo..."
             name="description"
+            value={this.state.description}
             onChange={(e) => this.handleChange(e)} />
         </div>
         <button className="btn btn-primary">Add todo</button>
