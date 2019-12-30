@@ -19,7 +19,6 @@ class NewTodoForm extends Component {
       title: "",
       description: ""
     });
-    // handle form submission
   }
 
 
