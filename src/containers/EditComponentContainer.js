@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { editTodo } from '../actions/todos';
+import { editTodo, updateTodo } from '../actions/todos';
 
 import EditTodo from '../components/EditTodo';
 
@@ -14,5 +14,5 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
   mapStateToProps,
-  { editTodo }
+  { editTodo, updateTodo }
   )(EditTodo)

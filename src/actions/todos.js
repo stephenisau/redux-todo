@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, EDIT_TODO } from './types';
+import { ADD_TODO, REMOVE_TODO, EDIT_TODO, UPDATE_TODO } from './types';
 
 let todoId = 3;
 
@@ -29,6 +29,17 @@ export const editTodo = (id) => {
     payload: {
       id: id,
       edit: true,
+    }
+  }
+}
+
+export const updateTodo = ({ id, title, description }) => {
+  return {
+    type: UPDATE_TODO,
+    payload: {
+      id: id,
+      title: title,
+      description: description
     }
   }
 }

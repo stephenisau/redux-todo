@@ -13,7 +13,7 @@ function TodoList({ todos, ids, removeTodo, editTodo }) {
     This code below is to extract the ID's from the store and make turn them into individual todos
     */
   const todoList = Object.keys(todos).map(id => {
-    return { ...todos[id], }
+    return { ...todos[id], id: id}
   });
 
   const toggleEdit = (todoId) => {
@@ -23,6 +23,7 @@ function TodoList({ todos, ids, removeTodo, editTodo }) {
     // return todoList.map(todo => todo.id === todoId ? { ...todo, edit: !todo.edit } : todo)
     console.log("hi");
   }
+  console.log(todoList);
 
   return (
     <React.Fragment>

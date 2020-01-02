@@ -1,4 +1,4 @@
-import { ADD_TODO, REMOVE_TODO, EDIT_TODO } from '../actions/types';
+import { ADD_TODO, REMOVE_TODO, EDIT_TODO, UPDATE_TODO } from '../actions/types';
 
 import data from '../data.json';
 
@@ -7,21 +7,20 @@ const INITIAL_STATE = {
   allIds: [...data.allIds]
 }
 
-let id;
 
 export const todoReducer = (state = INITIAL_STATE, action) => {
   let stateCopy = { ...state };
-
+  
   switch (action.type) {
     case ADD_TODO:
-      id = action.payload.id;
+      var id = action.payload.id;
       return {
         todos: { ...stateCopy.todos, [id]: action.payload.text },
         allIds: [...stateCopy.allIds, id]
       }
 
     case REMOVE_TODO:
-      id = action.payload.id
+      var id = action.payload.id
       const removedState = Object.keys(stateCopy.todos)
         .filter(key => key !== id)
         .reduce((obj, key) => {
@@ -37,20 +36,36 @@ export const todoReducer = (state = INITIAL_STATE, action) => {
       }
 
     case EDIT_TODO:
-      for (let key in stateCopy.todos) {
+      let newState = { ...stateCopy }
+      var id = action.payload.id;
+      for (let key in newState.todos) {
+        if (!newState.todos[key].hasOwnProperty('edit')) {
+          newState.todos[key].edit = false
+        }
+      }
+      for (let key in newState.todos) {
         if (key === action.payload.id) {
-          stateCopy.todos[key].edit = true || !stateCopy.todos[id].edit
-        } 
-        else {
-          stateCopy.todos[key].edit = false || !stateCopy.todos[id].edit 
+          newState.todos[key].edit = !newState.todos[id].edit
         }
       }
       return {
-        todos: {...stateCopy.todos},
-        allIds: [...stateCopy.allIds]
+        todos: { ...newState.todos },
+        allIds: [...newState.allIds]
       }
 
 
+    case UPDATE_TODO:
+      for (let key in stateCopy.todos) {
+        if (key === action.payload.id) {
+          stateCopy.todos[key].title = action.payload.title;
+          stateCopy.todos[key].description = action.payload.description;
+          stateCopy.todos[key].edit = false;
+        } 
+      }
+      return {
+        todos: { ...stateCopy.todos },
+        allIds: [...stateCopy.allIds]
+      }
 
     default:
       return { ...stateCopy }
