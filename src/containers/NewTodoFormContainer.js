@@ -6,8 +6,8 @@ import { addTodo } from '../actions/todos';
 
 export const mapStateToProps = (state, ownProps) => {
   return {
-    todos: state.todos.todos,
-    allIds: [...state.todos.allIds]
+    todos: state.todoReducer.todos,
+    allIds: [...state.todoReducer.allIds]
   }
 }
 

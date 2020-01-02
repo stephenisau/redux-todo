@@ -23,12 +23,12 @@ export const removeTodo = (id) => {
   }
 }
 
-export const editTodo = (id, text) => {
+export const editTodo = (id) => {
   return {
     type: EDIT_TODO,
     payload: {
       id: id,
-      text: text
+      edit: true,
     }
   }
 }

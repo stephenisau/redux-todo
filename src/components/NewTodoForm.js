@@ -38,7 +38,7 @@ class NewTodoForm extends Component {
             type="text"
             className="form-control"
             id="title"
-            placeholder="Add a todo..."
+            placeholder="Add a title for your todo..."
             name="title"
             value={this.state.title}
             onChange={(e) => this.handleChange(e)} />
@@ -46,7 +46,7 @@ class NewTodoForm extends Component {
             type="text"
             className="form-control"
             id="description"
-            placeholder="Add a todo..."
+            placeholder="Add a description for your todo..."
             name="description"
             value={this.state.description}
             onChange={(e) => this.handleChange(e)} />
