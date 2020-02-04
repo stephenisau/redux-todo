@@ -18,10 +18,8 @@ function TodoList({ todos, ids, removeTodo, editTodo }) {
 
   const toggleEdit = (todoId) => {
     /* This function toggles the edit for the selected todo */
-    console.log('bye');
     editTodo(todoId);
     // return todoList.map(todo => todo.id === todoId ? { ...todo, edit: !todo.edit } : todo)
-    console.log("hi");
   }
   console.log(todoList);
 
