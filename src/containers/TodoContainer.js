@@ -3,10 +3,6 @@ import TodoList from '../components/TodoList';
 
 import { removeTodo, editTodo } from '../actions/todos';
 
-const getIds = (todos) => {
-  console.log('todo')
-}
-
 
 const mapStateToProps = (state, ownProps) => {
   return {

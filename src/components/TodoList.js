@@ -21,7 +21,6 @@ function TodoList({ todos, ids, removeTodo, editTodo }) {
     editTodo(todoId);
     // return todoList.map(todo => todo.id === todoId ? { ...todo, edit: !todo.edit } : todo)
   }
-  console.log(todoList);
 
   return (
     <React.Fragment>
