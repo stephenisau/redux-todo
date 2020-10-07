@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Switch, Route, Redirect } from "react-router-dom";
 import TodoContainer from '../containers/TodoContainer';
 import NewTodoFormContainer from '../containers/NewTodoFormContainer';
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = () => {
   return (
