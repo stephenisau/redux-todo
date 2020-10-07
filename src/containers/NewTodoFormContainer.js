@@ -12,6 +12,6 @@ export const mapStateToProps = (state, ownProps) => {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   { addTodo }
 )(NewTodoForm);

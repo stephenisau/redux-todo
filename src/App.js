@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import TodoContainer from './containers/TodoContainer';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import Routes from "./routes";
 
 // import NewTodoForm from './components/NewTodoForm';
 import NewTodoFormContainer from './containers/NewTodoFormContainer';
 
 import './App.css';
 
-function App() {
+function App(props) {
+  console.log(props);
   return (
     <React.Fragment>
-      <div className="container">
-        <TodoContainer />
-        <NewTodoFormContainer />
-      </div>
+      <BrowserRouter>
+        <div className="container">
+          <Routes />
+        </div>
+        <div className="open-search">
+          <Link to="/new-todo"><button>Search</button></Link>
+        </div>
+      </BrowserRouter>
     </React.Fragment>
   );
 }
